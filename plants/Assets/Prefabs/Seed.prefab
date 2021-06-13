@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4916343695048442342}
   - component: {fileID: 8670360239916814212}
   - component: {fileID: 1688957452117461910}
+  - component: {fileID: 3618651130928470226}
   m_Layer: 0
   m_Name: Seed
   m_TagString: Untagged
@@ -58,6 +59,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &4916343695048442342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,7 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 122
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!114 &1688957452117461910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,3 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88d00dfe30a7ef489e1cb67e689cc0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3618651130928470226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529351955362462668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b0eefac9a1a44583952ec9696b4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Seed
+  itemSprite: {fileID: 21300000, guid: a5714ce3a676510499edfacdea9967aa, type: 3}
