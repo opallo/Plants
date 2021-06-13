@@ -10,4 +10,6 @@ public class Slot : MonoBehaviour
     public int itemCount;
     public Image icon;
     public TextMeshProUGUI itemCountText;
+
+    
 }
