@@ -1,2 +1,2 @@
 # Plants
- A casual building simulator.
+ A casual building simulator
