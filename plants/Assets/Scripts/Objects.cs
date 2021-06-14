@@ -1,4 +1,6 @@
 ﻿public enum Objects : int {
-  Grass = 0,
-  Seed = 1
+  Dirt = 0,
+  Grass = 1,
+  Seed = 2,
+  Stone = 3
 }

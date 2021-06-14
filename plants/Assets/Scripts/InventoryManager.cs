@@ -11,12 +11,11 @@ public class InventoryManager : MonoBehaviour {
       if (hotbar.slots[i].currentItem == null) {
         hotbar.slots[i].currentItem = currentItem;
         hotbar.slots[i].itemCount += 1;
-        uiManager.UpdateSlotUI(ref hotbar.slots[i]);
-        //hotbar.slots[i].UpdateUI();
+        uiManager.UpdateSlotUI(hotbar.slots[i]);
         break;   
       } else if (hotbar.slots[i].currentItem.itemName == currentItem.itemName) {
         hotbar.slots[i].itemCount += 1;
-        uiManager.UpdateSlotUI(ref hotbar.slots[i]);
+        uiManager.UpdateSlotUI(hotbar.slots[i]);
         break;
       } else {
 

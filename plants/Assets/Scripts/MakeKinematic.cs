@@ -11,6 +11,9 @@ public class MakeKinematic : MonoBehaviour {
     if (!rb.isKinematic){
       SetKinematic();
     }else{
+      if(TryGetComponent<FloatingObject>(out FloatingObject floatingObject)){
+        floatingObject.readyToFloat = true;
+      }
       GetComponent<MakeKinematic>().enabled = false;
     }
   }

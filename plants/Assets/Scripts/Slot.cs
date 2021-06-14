@@ -4,33 +4,41 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-public class Slot : MonoBehaviour, IPointerDownHandler {
+public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler {
   [SerializeField] UIManager uiManager;
   public StorableItem currentItem;
   public int itemCount;
   public Image icon;
   public TextMeshProUGUI itemCountText;
   MouseSlot mouseSlot;
-  void Awake(){
+  void Awake() {
     mouseSlot = FindObjectOfType<MouseSlot>();
   }
-  public void OnPointerDown(PointerEventData eventData) {
-    // Scenario 2
-    if (currentItem != null && mouseSlot.currentItem == null) {
-      GiveToMouseSlot();
-      // Scenarios 3, 4a, & 4b
-    } else if (mouseSlot.currentItem != null) {
-      // Scenarios 3 & 4a
-      if ((currentItem == null) || (currentItem.name == mouseSlot.currentItem.name)) {
-        TakeFromMouseSlot();
-        // Scenario 4b
-      } else {
-        SwapItems();
+
+  public void OnPointerClick(PointerEventData eventData) {
+    // Left Click
+    if (eventData.button == PointerEventData.InputButton.Left) {
+      if (currentItem != null && mouseSlot.currentItem == null) {
+        GiveToMouseSlot();
+        // Scenarios 3, 4a, & 4b
+      } else if (mouseSlot.currentItem != null) {
+        // Scenarios 3 & 4a
+        if ((currentItem == null) || (currentItem.name == mouseSlot.currentItem.name)) {
+          TakeFromMouseSlot();
+          // Scenario 4b
+        } else {
+          SwapItems();
+        }
       }
+      Slot thisSlot = GetComponent<Slot>();
+      uiManager.UpdateSlotUI(thisSlot);
+      uiManager.UpdateMouseSlotUI(mouseSlot);
+    // Middle Click
+    } else if (eventData.button == PointerEventData.InputButton.Middle) { 
+    // Right Click
+    } else if (eventData.button == PointerEventData.InputButton.Right) {
+
     }
-    Slot thisSlot = GetComponent<Slot>();
-    uiManager.UpdateSlotUI(ref thisSlot);
-    uiManager.UpdateMouseSlotUI(ref mouseSlot);
   }
   void GiveToMouseSlot() {
     // If there is NOTHING in mouseSlot, give mouse hotbar items (handles scenario 2)

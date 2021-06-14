@@ -5,6 +5,9 @@ using UnityEngine;
 public class MouseController : MonoBehaviour {
   Vector3 groundHitPosition;
   GameObject currentObject;
+  MouseSlot mouseSlot;
+  PlayerSpawner playerSpawner;
+  ObjectNameDictionary objectNameDictionary;
   //-----------------------------------------------------------------
   [Header("LayerMasks")]
   [SerializeField] LayerMask objectLayerMask;
@@ -12,6 +15,12 @@ public class MouseController : MonoBehaviour {
   //-----------------------------------------------------------------
   [Header("Control Debugging")]
   [SerializeField] bool dragAndDrop;
+
+  void Awake() {
+    objectNameDictionary = FindObjectOfType<ObjectNameDictionary>();
+    playerSpawner = FindObjectOfType<PlayerSpawner>();
+    mouseSlot = FindObjectOfType<MouseSlot>();
+  }
 
   void Update() {
     Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -23,19 +32,26 @@ public class MouseController : MonoBehaviour {
 
     groundHitPosition = groundHitInfo.point;
 
-    if (Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
-      if (Input.GetMouseButtonDown(0)) {
-        currentObject = objectHitInfo.transform.gameObject;
+    if (Input.GetMouseButtonDown(0)) {
+      if (!Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
+        if (mouseSlot.currentItem != null) {
+          playerSpawner.SpawnNewObject(objectNameDictionary.objectNameDictionary[mouseSlot.currentItem.itemName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
+        }
       }
     }
 
-    /*
-    if (dragAndDrop) {
-      if (Input.GetMouseButton(0) && currentObject != null) {
-        DragAndDrop();
-      }
-    }
-    */
+    // if (Input.GetMouseButtonDown(0)) {
+    //   if (Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
+    //     currentObject = objectHitInfo.transform.gameObject;
+    //   }
+    // }
+
+    // if (dragAndDrop) {
+    //   if (Input.GetMouseButton(0) && currentObject != null) {
+    //     DragAndDrop();
+    //   }
+    // }
+
   }
   void DragAndDrop() {
     if (groundHitPosition != null) {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class UIManager : MonoBehaviour {
   [SerializeField] Sprite nullSprite;
-  public void UpdateSlotUI(ref Slot slot) {
+  public void UpdateSlotUI(Slot slot) {
     if (slot.currentItem == null) {
       slot.icon.sprite = nullSprite;
       slot.itemCountText.text = "";
@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour {
       slot.itemCountText.text = slot.itemCount.ToString();
     }
   }
-  public void UpdateMouseSlotUI(ref MouseSlot mouseSlot) {
+  public void UpdateMouseSlotUI(MouseSlot mouseSlot) {
     if (mouseSlot.currentItem == null) {
       mouseSlot.icon.sprite = nullSprite;
       mouseSlot.itemCountText.text = "";
