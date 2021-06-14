@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: fde11a894d4fcba438c9c970ac369e2b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -165,11 +165,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c46c0207fe255a47ae3d0ea9aeb97ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 7119693683260876584, guid: e843797271af92041b7c444fa0c96d1f,
+    type: 3}
   currentItem: {fileID: 0}
   itemCount: 0
   icon: {fileID: 4517458218079657551}
   itemCountText: {fileID: 5696808541491797809}
+  mouseSlot: {fileID: 7254506529215745810, guid: bb1013aae5fa4c5499be9b6c31d977d0,
+    type: 3}
 --- !u!1 &6468450824735007580
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
