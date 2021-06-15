@@ -33,7 +33,7 @@ public class MouseController : MonoBehaviour {
     groundHitPosition = groundHitInfo.point;
 
     if (Input.GetMouseButtonDown(0)) {
-      if (!Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
+      if (groundHitInfo.collider != null && !Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
         if (mouseSlot.currentItem != null) {
           playerSpawner.SpawnNewObject(objectNameDictionary.objectNameDictionary[mouseSlot.currentItem.itemName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
         }

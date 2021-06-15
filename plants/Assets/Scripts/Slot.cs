@@ -12,6 +12,7 @@ public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler
   public TextMeshProUGUI itemCountText;
   MouseSlot mouseSlot;
   void Awake() {
+    uiManager = FindObjectOfType<UIManager>();
     mouseSlot = FindObjectOfType<MouseSlot>();
   }
 
