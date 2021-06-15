@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 public class Spawner : MonoBehaviour {
+  Player player;
   GameObject[] objects;
-  PlayerSpawner playerSpawner;
-  MouseSlot mouseSlot;
   bool occupied;
   void Awake() {
-    playerSpawner = FindObjectOfType<PlayerSpawner>();
-    objects = playerSpawner.objects;
-    mouseSlot = FindObjectOfType<MouseSlot>();
+    player = FindObjectOfType<Player>();
+    objects = player.playerSpawner.objects;
     occupied = false;
     SpawnInitialObjects();
   }
@@ -26,7 +24,5 @@ public class Spawner : MonoBehaviour {
         occupied = true;
       }
     }
-  }
-  public void SpawnNewObject(Vector3 spawnPosition) {
   }
 }

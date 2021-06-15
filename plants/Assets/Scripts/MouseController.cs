@@ -5,9 +5,7 @@ using UnityEngine;
 public class MouseController : MonoBehaviour {
   Vector3 groundHitPosition;
   GameObject currentObject;
-  MouseSlot mouseSlot;
-  PlayerSpawner playerSpawner;
-  ObjectNameDictionary objectNameDictionary;
+  Player player;
   //-----------------------------------------------------------------
   [Header("LayerMasks")]
   [SerializeField] LayerMask objectLayerMask;
@@ -17,9 +15,7 @@ public class MouseController : MonoBehaviour {
   [SerializeField] bool dragAndDrop;
 
   void Awake() {
-    objectNameDictionary = FindObjectOfType<ObjectNameDictionary>();
-    playerSpawner = FindObjectOfType<PlayerSpawner>();
-    mouseSlot = FindObjectOfType<MouseSlot>();
+    player = FindObjectOfType<Player>();
   }
 
   void Update() {
@@ -34,8 +30,8 @@ public class MouseController : MonoBehaviour {
 
     if (Input.GetMouseButtonDown(0)) {
       if (groundHitInfo.collider != null && !Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
-        if (mouseSlot.currentItem != null) {
-          playerSpawner.SpawnNewObject(objectNameDictionary.objectNameDictionary[mouseSlot.currentItem.itemName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
+        if (player.mouseSlot.currentItem != null) {
+          player.playerSpawner.SpawnNewObject(player.objectNameDictionary.objectNameDictionary[player.mouseSlot.currentItem.itemName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
         }
       }
     }

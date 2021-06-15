@@ -7,13 +7,9 @@ public class CameraController : MonoBehaviour {
   Vector3 referenceHitPosition;
   void Update() {
     RaycastHit referenceHitInfo;
-
     Ray referenceRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-
     Physics.Raycast(referenceRay, out referenceHitInfo, Mathf.Infinity, referenceLayerMask);
-
     referenceHitPosition = referenceHitInfo.point;
-
     FollowMouse();
   }
   void FollowMouse() {
