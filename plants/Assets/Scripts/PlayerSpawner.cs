@@ -9,7 +9,7 @@ public class PlayerSpawner : MonoBehaviour {
     player = FindObjectOfType<Player>();
   }
   public void SpawnNewObject(GameObject objectToSpawn, Vector3 spawnPosition) {
-    GameObject newObject = Instantiate(player.mouseSlot.currentItem.gameObject, spawnPosition, player.mouseSlot.gameObject.transform.rotation);
+    GameObject newObject = Instantiate(objectToSpawn, spawnPosition, player.mouseSlot.gameObject.transform.rotation);
     newObject.SetActive(true);
     player.mouseSlot.SubtractCurrentItem(1);
     player.uiManager.UpdateMouseSlotUI(player.mouseSlot);

@@ -13,7 +13,6 @@ public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler
   void Awake() {
     player = FindObjectOfType<Player>();
   }
-
   public void OnPointerClick(PointerEventData eventData) {
     // Left Click
     if (eventData.button == PointerEventData.InputButton.Left) {

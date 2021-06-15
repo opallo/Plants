@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour {
   Player player;
-  public Hotbar hotbar;
   //[SerializeField] MouseController mouseController;
   void Awake(){
     player = FindObjectOfType<Player>();
   }
   public void AddToInventory(StorableItem currentItem) {
-    for (int i = 0; i < hotbar.slots.Length; i++) {
-      if (hotbar.slots[i].currentItem == null) {
-        hotbar.slots[i].currentItem = currentItem;
-        hotbar.slots[i].itemCount += 1;
-        player.uiManager.UpdateSlotUI(hotbar.slots[i]);
+    for (int i = 0; i < player.hotbar.slots.Length; i++) {
+      if (player.hotbar.slots[i].currentItem == null) {
+        player.hotbar.slots[i].currentItem = currentItem;
+        player.hotbar.slots[i].itemCount += 1;
+        player.uiManager.UpdateSlotUI(player.hotbar.slots[i]);
         break;   
-      } else if (hotbar.slots[i].currentItem.itemName == currentItem.itemName) {
-        hotbar.slots[i].itemCount += 1;
-        player.uiManager.UpdateSlotUI(hotbar.slots[i]);
+      } else if (player.hotbar.slots[i].currentItem.itemName == currentItem.itemName) {
+        player.hotbar.slots[i].itemCount += 1;
+        player.uiManager.UpdateSlotUI(player.hotbar.slots[i]);
         break;
       } else {
-
       }
     }
   }

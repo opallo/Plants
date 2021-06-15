@@ -9,7 +9,9 @@ public class Player : MonoBehaviour {
   public UIManager uiManager;
   public PlayerSpawner playerSpawner;
   public ObjectNameDictionary objectNameDictionary;
+  public SeedDictionary seedDictionary;
   public MouseSlot mouseSlot;
+  public Hotbar hotbar;
   void Awake() {
     settingsManager = FindObjectOfType<SettingsManager>();
     mouseController = FindObjectOfType<MouseController>();
@@ -17,6 +19,8 @@ public class Player : MonoBehaviour {
     uiManager = FindObjectOfType<UIManager>();
     playerSpawner = FindObjectOfType<PlayerSpawner>();
     objectNameDictionary = FindObjectOfType<ObjectNameDictionary>();
+    seedDictionary = FindObjectOfType<SeedDictionary>();
     mouseSlot = FindObjectOfType<MouseSlot>();
+    hotbar = FindObjectOfType<Hotbar>();
   }
 }

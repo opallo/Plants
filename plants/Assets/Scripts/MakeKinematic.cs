@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MakeKinematic : MonoBehaviour {
   Rigidbody rb;
-  void Awake(){
+  void Awake() {
     rb = GetComponent<Rigidbody>();
   }
   void LateUpdate() {
-    if (!rb.isKinematic){
+    if (!rb.isKinematic) {
       SetKinematic();
-    }else{
-      if(TryGetComponent<FloatingObject>(out FloatingObject floatingObject)){
+    } else {
+      if (TryGetComponent<FloatingObject>(out FloatingObject floatingObject)) {
         floatingObject.readyToFloat = true;
       }
       GetComponent<MakeKinematic>().enabled = false;
