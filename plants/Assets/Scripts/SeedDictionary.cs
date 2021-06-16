@@ -7,6 +7,11 @@ public class SeedDictionary : MonoBehaviour {
   Player player;
   void Awake() {
     player = FindObjectOfType<Player>();
+
+
     seedDictionary.Add("Seed", player.playerSpawner.objects[(int)Objects.Tree]);
+
+
+
   }
 }

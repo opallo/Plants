@@ -15,8 +15,6 @@ public class Spawner : MonoBehaviour {
     Instantiate(objects[(int)Objects.Grass], transform.position + (Vector3.up * (Random.Range(4f, 6f))), Quaternion.identity);
     RandomSpawn(objects[(int)Objects.Seed], .3f);
     RandomSpawn(objects[(int)Objects.Stone], .3f);
-    RandomSpawn(objects[(int)Objects.Tree], .4f);
-   
   }
   void RandomSpawn(GameObject newObject, float spawnChance) {
     float rand = Random.Range(0f, 1f);
