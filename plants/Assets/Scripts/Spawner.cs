@@ -21,25 +21,23 @@ public class Spawner : MonoBehaviour {
   void SpawnGrass() {
     Instantiate(objects[(int)Objects.Grass], transform.position + (Vector3.up * (Random.Range(10f, 50f))), Quaternion.identity);
   }
-  void SpawnDelayedObjects() {
-    RandomSpawn(objects[(int)Objects.Flower], .0001f);
-    RandomSpawn(objects[(int)Objects.Seed], .3f);
-    RandomSpawn(objects[(int)Objects.Stone], .3f);
-  }
-  void RandomSpawn(GameObject newObject, float spawnChance) {
-    float rand = Random.Range(0f, 1f);
-    if (spawnChance < rand) {
-      if (!occupied) {
-        Instantiate(newObject, transform.position + (Vector3.up * (Random.Range(10f, 50f))), newObject.transform.rotation);
-        occupied = true;
-      }
-    }
-  }
   void InitialSpawnDelay(ref float time) {
     time -= Time.deltaTime;
     if (time <= 0) {
       SpawnDelayedObjects();
-      delayedObjectsSpawned = true;
     }
+  }
+  void SpawnDelayedObjects() {
+    GameObject[] potentialObjectsToSpawn = {
+      objects[(int)Objects.Stone],
+      objects[(int)Objects.Seed],
+      objects[(int)Objects.IzziSeed]
+    };
+    RandomSpawn(potentialObjectsToSpawn);
+    delayedObjectsSpawned = true;
+  }
+  void RandomSpawn(GameObject[] potentialObjects) {
+    int rand = Random.Range(0, potentialObjects.Length);
+    Instantiate(potentialObjects[rand], transform.position + (Vector3.up * (Random.Range(10f, 50f))), potentialObjects[rand].transform.rotation);
   }
 }

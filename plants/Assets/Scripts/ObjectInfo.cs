@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class StorableItem : MonoBehaviour /*IPointerClickHandler*/ {
+public class ObjectInfo : MonoBehaviour /*IPointerClickHandler*/ {
   Player player;
   public string itemName;
+  public string itemType;
   public Sprite itemSprite;
+  public bool seed;
 
   void Awake() {
     player = FindObjectOfType<Player>();
@@ -19,8 +21,10 @@ public class StorableItem : MonoBehaviour /*IPointerClickHandler*/ {
   //   }
   // }
   void OnMouseDown() {
-    player.inventoryManager.AddToInventory(GetComponent<StorableItem>());
-    transform.gameObject.SetActive(false);
+    if (GetComponent<ObjectInfo>().itemType == "Storable") {
+      player.inventoryManager.AddToInventory(GetComponent<ObjectInfo>());
+      transform.gameObject.SetActive(false);
+    }
     //Destroy(transform.gameObject);
     // ^^^ this destroys the original GameObject, could be a problem...
   }

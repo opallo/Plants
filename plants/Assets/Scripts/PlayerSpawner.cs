@@ -14,4 +14,7 @@ public class PlayerSpawner : MonoBehaviour {
     player.mouseSlot.SubtractCurrentItem(1);
     player.uiManager.UpdateMouseSlotUI(player.mouseSlot);
   }
+  public void PlantSeed(string seedName, RaycastHit groundHitInfo) {
+      player.playerSpawner.SpawnNewObject(player.seedDictionary.seedDictionary[seedName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
+    }
 }

@@ -7,7 +7,7 @@ public class PlaceObjectAnimation : MonoBehaviour {
   [SerializeField] LayerMask groundLayerMask;
   [SerializeField] bool isMoving;
   [SerializeField] static float shakeAmount = .5f;
-  [SerializeField] static float shakeTimer = .01f;
+  [SerializeField] static float shakeTimer = .02f;
   void OnEnable() {
     isMoving = true;
     transform.position += Vector3.up * 4f;

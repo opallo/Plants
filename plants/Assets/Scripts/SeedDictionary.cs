@@ -10,6 +10,7 @@ public class SeedDictionary : MonoBehaviour {
 
 
     seedDictionary.Add("Seed", player.playerSpawner.objects[(int)Objects.Tree]);
+    seedDictionary.Add("IzziSeed", player.playerSpawner.objects[(int)Objects.IzziPlanted]);
 
 
 

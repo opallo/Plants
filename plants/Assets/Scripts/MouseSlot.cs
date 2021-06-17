@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MouseSlot : MonoBehaviour {
   [SerializeField] UIManager uiManager;
-  public StorableItem currentItem;
+  public ObjectInfo currentItem;
   public int itemCount;
   public Image icon;
   public TextMeshProUGUI itemCountText;

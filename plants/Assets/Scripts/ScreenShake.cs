@@ -10,7 +10,6 @@ public class ScreenShake : MonoBehaviour {
   void Awake() {
     Instance = this;
     cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
-
   }
 
   public void ShakeCamera(float intensity, float time) {
@@ -23,7 +22,6 @@ public class ScreenShake : MonoBehaviour {
     shakeTimer -= Time.deltaTime;
     if (shakeTimer <= 0f) {
       CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = cinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
       cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = 0f;
     }
   }

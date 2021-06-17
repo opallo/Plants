@@ -7,9 +7,12 @@ public class ObjectNameDictionary : MonoBehaviour {
   Player player;
   void Awake() {
     player = FindObjectOfType<Player>();
-    objectNameDictionary.Add("Seed", player.playerSpawner.objects[(int)Objects.Seed]);
-    objectNameDictionary.Add("Stone", player.playerSpawner.objects[(int)Objects.Stone]);
-    objectNameDictionary.Add("Tree", player.playerSpawner.objects[(int)Objects.Tree]);
-    objectNameDictionary.Add("Flower", player.playerSpawner.objects[(int)Objects.Flower]);
+    UpdateDictionary();
+  }
+
+  void UpdateDictionary(){
+    for(int i = 0; i < player.playerSpawner.objects.Length; i++){
+      objectNameDictionary.Add(player.playerSpawner.objects[i].GetComponent<ObjectInfo>().itemName, player.playerSpawner.objects[i]);
+    }
   }
 }

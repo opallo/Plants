@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
   }
   void FollowMouse() {
     if (referenceHitPosition != null) {
-      referenceObject.position = new Vector3(referenceHitPosition.x, 1f, referenceHitPosition.z);
+      referenceObject.position = new Vector3(referenceHitPosition.x, .2f, referenceHitPosition.z);
     }
   }
 }

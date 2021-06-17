@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour {
   void Awake(){
     player = FindObjectOfType<Player>();
   }
-  public void AddToInventory(StorableItem currentItem) {
+  public void AddToInventory(ObjectInfo currentItem) {
     for (int i = 0; i < player.hotbar.slots.Length; i++) {
       if (player.hotbar.slots[i].currentItem == null) {
         player.hotbar.slots[i].currentItem = currentItem;

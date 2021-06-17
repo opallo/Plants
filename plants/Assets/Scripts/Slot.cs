@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler {
   Player player;
-  public StorableItem currentItem;
+  public ObjectInfo currentItem;
   public int itemCount;
   public Image icon;
   public TextMeshProUGUI itemCountText;
@@ -14,8 +14,9 @@ public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler
     player = FindObjectOfType<Player>();
   }
   public void OnPointerClick(PointerEventData eventData) {
-    // Left Click
+    // vvv Left Click
     if (eventData.button == PointerEventData.InputButton.Left) {
+        // Scenario 2
       if (currentItem != null && player.mouseSlot.currentItem == null) {
         GiveToMouseSlot();
         // Scenarios 3, 4a, & 4b
@@ -31,15 +32,15 @@ public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler
       Slot thisSlot = GetComponent<Slot>();
       player.uiManager.UpdateSlotUI(thisSlot);
       player.uiManager.UpdateMouseSlotUI(player.mouseSlot);
-    // Middle Click
+    // vvv Middle Click
     } else if (eventData.button == PointerEventData.InputButton.Middle) { 
-    // Right Click
+    // vvv Right Click
     } else if (eventData.button == PointerEventData.InputButton.Right) {
 
     }
   }
   void GiveToMouseSlot() {
-    // If there is NOTHING in player.mouseSlot, give mouse hotbar items (handles scenario 2)
+    // If there is NOTHING in player.mouseSlot & SOMETHING in the hotbar, give mouse hotbar items (handles scenario 2)
     player.mouseSlot.currentItem = currentItem;
     player.mouseSlot.itemCount = itemCount;
     currentItem = null;
@@ -54,7 +55,7 @@ public class Slot : MonoBehaviour, /*IPointerDownHandler,*/ IPointerClickHandler
   }
   void SwapItems() {
     // If there is SOMETHING in BOTH hotbar AND mouse AND the items are DIFFERENT, swap items (handles scenario 4b)
-    StorableItem tempMouseCurrentItem = player.mouseSlot.currentItem;
+    ObjectInfo tempMouseCurrentItem = player.mouseSlot.currentItem;
     int tempMouseItemCount = player.mouseSlot.itemCount;
     player.mouseSlot.currentItem = currentItem;
     player.mouseSlot.itemCount = itemCount;

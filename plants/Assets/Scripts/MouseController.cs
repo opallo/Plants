@@ -31,24 +31,21 @@ public class MouseController : MonoBehaviour {
     } else if (Input.GetMouseButtonDown(1)) {
       if (groundHitInfo.collider != null && !Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
         if (player.mouseSlot.currentItem != null) {
-          if (player.mouseSlot.currentItem.itemName == "Seed") {
-            PlantSeed();
-            //Debug.Log("Planted");
+          if (player.mouseSlot.currentItem.seed == true) {
+            player.playerSpawner.PlantSeed(player.mouseSlot.currentItem.itemName, groundHitInfo);
           }
         }
       }
     }
 
-    void PlantSeed() {
-      player.playerSpawner.SpawnNewObject(player.playerSpawner.objects[(int)Objects.Tree], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
-    }
-    void DragAndDrop() {
-      if (groundHitPosition != null) {
-        currentObject.transform.position = new Vector3(Mathf.Round(groundHitPosition.x), 0f, Mathf.Round(groundHitPosition.z));
-      }
-      if (Input.GetMouseButtonUp(0)) {
-        currentObject = null;
-      }
-    }
+    
+    // void DragAndDrop() {
+    //   if (groundHitPosition != null) {
+    //     currentObject.transform.position = new Vector3(Mathf.Round(groundHitPosition.x), 0f, Mathf.Round(groundHitPosition.z));
+    //   }
+    //   if (Input.GetMouseButtonUp(0)) {
+    //     currentObject = null;
+    //   }
+    // }
   }
 }

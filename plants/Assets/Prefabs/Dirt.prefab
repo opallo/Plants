@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -4622327042364041369}
   - component: {fileID: 5501689055272540518}
   - component: {fileID: 8788033136882990372}
+  - component: {fileID: 8916109911129595032}
   m_Layer: 12
   m_Name: Dirt
   m_TagString: Untagged
@@ -92,7 +93,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5501689055272540517}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -104,7 +105,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5501689055272540517}
-  m_Material: {fileID: 13400000, guid: f36ffc625d1b6434a86131283e3723c4, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -126,3 +127,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8916109911129595032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5501689055272540517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb0b0eefac9a1a44583952ec9696b4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Dirt
+  itemType: 
+  itemSprite: {fileID: 0}
