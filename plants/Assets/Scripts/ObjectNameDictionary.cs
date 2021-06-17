@@ -10,5 +10,6 @@ public class ObjectNameDictionary : MonoBehaviour {
     objectNameDictionary.Add("Seed", player.playerSpawner.objects[(int)Objects.Seed]);
     objectNameDictionary.Add("Stone", player.playerSpawner.objects[(int)Objects.Stone]);
     objectNameDictionary.Add("Tree", player.playerSpawner.objects[(int)Objects.Tree]);
+    objectNameDictionary.Add("Flower", player.playerSpawner.objects[(int)Objects.Flower]);
   }
 }
