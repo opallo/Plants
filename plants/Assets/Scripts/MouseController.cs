@@ -28,7 +28,7 @@ public class MouseController : MonoBehaviour {
           player.playerSpawner.SpawnNewObject(player.objectNameDictionary.objectNameDictionary[player.mouseSlot.currentItem.itemName], new Vector3(Mathf.Round(groundHitInfo.point.x), groundHitInfo.point.y, Mathf.Round(groundHitInfo.point.z)));
         }
       }
-    } else if (Input.GetMouseButton(1)) {
+    } else if (Input.GetMouseButtonDown(1)) {
       if (groundHitInfo.collider != null && !Physics.Raycast(mouseRay, out objectHitInfo, Mathf.Infinity, objectLayerMask)) {
         if (player.mouseSlot.currentItem != null) {
           if (player.mouseSlot.currentItem.itemName == "Seed") {

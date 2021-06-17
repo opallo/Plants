@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class CameraController : MonoBehaviour {
   [SerializeField] LayerMask referenceLayerMask;
-  [SerializeField] Transform referenceCube;
+  [SerializeField] Transform referenceObject;
   Vector3 referenceHitPosition;
   void Update() {
     RaycastHit referenceHitInfo;
@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour {
   }
   void FollowMouse() {
     if (referenceHitPosition != null) {
-      referenceCube.position = referenceHitPosition;
+      referenceObject.position = new Vector3(referenceHitPosition.x, 1f, referenceHitPosition.z);
     }
   }
 }

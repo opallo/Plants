@@ -1,0 +1,1 @@
+- Items can spawn on already occupied blocks if you click between their colliders
