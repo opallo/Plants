@@ -6,6 +6,8 @@ public class PlaceObjectAnimation : MonoBehaviour {
   [SerializeField] float moveSpeed;
   [SerializeField] LayerMask groundLayerMask;
   [SerializeField] bool isMoving;
+  [SerializeField] static float shakeAmount = .5f;
+  [SerializeField] static float shakeTimer = .01f;
   void OnEnable() {
     isMoving = true;
     transform.position += Vector3.up * 4f;
@@ -24,6 +26,7 @@ public class PlaceObjectAnimation : MonoBehaviour {
       } else {
         transform.position = new Vector3(transform.position.x, transform.position.y - hitInfo.distance, transform.position.z);
         //transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y - hitInfo.distance, transform.position.z), moveSpeed);
+        ScreenShake.Instance.ShakeCamera(shakeAmount, shakeTimer);
         isMoving = false;
         //Debug.Log("not moving");
       }

@@ -162,6 +162,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isMoving: 0
+  shakeAmount: 0.09
+  shakeTimer: 0.01
 --- !u!1 &8726044989503375926
 GameObject:
   m_ObjectHideFlags: 0
