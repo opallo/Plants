@@ -10,7 +10,7 @@ public class ObjectInfo : MonoBehaviour /*IPointerClickHandler*/ {
   public Sprite itemSprite;
   public bool seed;
 
-  void Awake() {
+  void Start() {
     player = FindObjectOfType<Player>();
   }
   // vvv Not working for some reason...

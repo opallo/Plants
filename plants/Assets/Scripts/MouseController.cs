@@ -15,7 +15,7 @@ public class MouseController : MonoBehaviour {
   [SerializeField] bool dragAndDrop;
   RaycastHit groundHitInfo;
   RaycastHit objectHitInfo;
-  void Awake() {
+  void Start() {
     player = FindObjectOfType<Player>();
   }
   void Update() {
@@ -47,5 +47,8 @@ public class MouseController : MonoBehaviour {
     //     currentObject = null;
     //   }
     // }
+  }
+  void ToolTip(){
+    
   }
 }

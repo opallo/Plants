@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FloatingObject : MonoBehaviour {
   public bool readyToFloat { get; set; }
-  void Awake() {
+  void Start() {
     readyToFloat = true;
   }
   void Update() {

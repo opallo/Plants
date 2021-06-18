@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MakeKinematic : MonoBehaviour {
   Rigidbody rb;
-  void Awake() {
+  void Start() {
     rb = GetComponent<Rigidbody>();
   }
   void LateUpdate() {

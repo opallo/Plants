@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour {
   public SettingsManager settingsManager;
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour {
   public SeedDictionary seedDictionary;
   public MouseSlot mouseSlot;
   public Hotbar hotbar;
+  public TextMeshProUGUI toolTip;
   void Awake() {
     settingsManager = FindObjectOfType<SettingsManager>();
     mouseController = FindObjectOfType<MouseController>();
@@ -22,5 +24,6 @@ public class Player : MonoBehaviour {
     seedDictionary = FindObjectOfType<SeedDictionary>();
     mouseSlot = FindObjectOfType<MouseSlot>();
     hotbar = FindObjectOfType<Hotbar>();
+    toolTip = FindObjectOfType<TextMeshProUGUI>();
   }
 }

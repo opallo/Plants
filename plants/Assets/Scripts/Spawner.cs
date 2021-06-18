@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Spawner : MonoBehaviour {
   Player player;
-  GameObject[] objects;
   bool occupied;
   [SerializeField] float spawnDelay;
   bool delayedObjectsSpawned;
-  void Awake() {
+  void Start() {
     player = FindObjectOfType<Player>();
-    objects = player.playerSpawner.objects;
     occupied = false;
     delayedObjectsSpawned = false;
     SpawnGrass();
@@ -19,7 +17,7 @@ public class Spawner : MonoBehaviour {
       InitialSpawnDelay(ref spawnDelay);
   }
   void SpawnGrass() {
-    Instantiate(objects[(int)Objects.Grass], transform.position + (Vector3.up * (Random.Range(10f, 50f))), Quaternion.identity);
+    Instantiate(player.playerSpawner.objects[(int)Objects.Grass], transform.position + (Vector3.up * (Random.Range(10f, 50f))), Quaternion.identity);
   }
   void InitialSpawnDelay(ref float time) {
     time -= Time.deltaTime;
@@ -29,9 +27,9 @@ public class Spawner : MonoBehaviour {
   }
   void SpawnDelayedObjects() {
     GameObject[] potentialObjectsToSpawn = {
-      objects[(int)Objects.Stone],
-      objects[(int)Objects.Seed],
-      objects[(int)Objects.IzziSeed]
+      player.playerSpawner.objects[(int)Objects.Stone],
+      player.playerSpawner.objects[(int)Objects.Seed],
+      player.playerSpawner.objects[(int)Objects.IzziSeed]
     };
     RandomSpawn(potentialObjectsToSpawn);
     delayedObjectsSpawned = true;

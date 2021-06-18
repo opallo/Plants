@@ -5,7 +5,7 @@ using UnityEngine;
 public class InventoryManager : MonoBehaviour {
   Player player;
   //[SerializeField] MouseController mouseController;
-  void Awake(){
+  void Start(){
     player = FindObjectOfType<Player>();
   }
   public void AddToInventory(ObjectInfo currentItem) {

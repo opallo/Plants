@@ -1,12 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingsManager : MonoBehaviour {
-  void Awake() {
-#if UNITY_EDITOR
-    QualitySettings.vSyncCount = 0; // VSync must be disabled
-    Application.targetFrameRate = 60;
-#endif
+  public int targetFrameRate = 60;
+  private void Start() {
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = targetFrameRate;
   }
+  void Update() {
+    if (Input.GetKeyDown(KeyCode.R)) {
+      Restart();
+    }
+    if(Input.GetKeyDown(KeyCode.Escape)){
+      Application.Quit();
+    }
+  }
+  public void Restart() {
+    SceneManager.LoadScene(0);
+  }
+
 }

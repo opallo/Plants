@@ -5,13 +5,13 @@ using UnityEngine;
 public class ObjectNameDictionary : MonoBehaviour {
   public Dictionary<string, GameObject> objectNameDictionary = new Dictionary<string, GameObject>();
   Player player;
-  void Awake() {
+  void Start() {
     player = FindObjectOfType<Player>();
     UpdateDictionary();
   }
-
-  void UpdateDictionary(){
-    for(int i = 0; i < player.playerSpawner.objects.Length; i++){
+  void UpdateDictionary() {
+    //Debug.Log(player.playerSpawner.objects.Length);
+    for (int i = 0; i < player.playerSpawner.objects.Length; i++) {
       objectNameDictionary.Add(player.playerSpawner.objects[i].GetComponent<ObjectInfo>().itemName, player.playerSpawner.objects[i]);
     }
   }

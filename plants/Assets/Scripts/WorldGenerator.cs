@@ -7,7 +7,7 @@ public class WorldGenerator : MonoBehaviour {
   [SerializeField] private Spawner spawner;
   [SerializeField] private int width;
   [SerializeField] private int height;
-  void Awake() {
+  void Start() {
     SpawnBlocks(width, height);
   }
   void SpawnBlocks(int width, int height) {

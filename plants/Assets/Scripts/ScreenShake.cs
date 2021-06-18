@@ -7,7 +7,7 @@ public class ScreenShake : MonoBehaviour {
   public static ScreenShake Instance {get; private set;}
   CinemachineVirtualCamera cinemachineVirtualCamera;
   private float shakeTimer;
-  void Awake() {
+  void Start() {
     Instance = this;
     cinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
   }
