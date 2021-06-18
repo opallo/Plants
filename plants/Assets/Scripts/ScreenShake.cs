@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour {
   public static ScreenShake Instance {get; private set;}
+  int Test;
   CinemachineVirtualCamera cinemachineVirtualCamera;
   private float shakeTimer;
   void Start() {

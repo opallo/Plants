@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ObjectInfo : MonoBehaviour /*IPointerClickHandler*/ {
   Player player;
   public string itemName;
+  [TextArea(5,10)] public string itemDescription;
   public string itemType;
   public Sprite itemSprite;
   public bool seed;
