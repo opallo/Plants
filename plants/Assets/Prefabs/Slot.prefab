@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4517458218079657544}
   - component: {fileID: 4517458218079657550}
   - component: {fileID: 4517458218079657551}
+  - component: {fileID: 7386902812367251753}
   m_Layer: 5
   m_Name: icon
   m_TagString: Untagged
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7386902812367251753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517458218079657545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96bf07e47db2d104c86c2e4a836f46d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltip: {fileID: 0}
 --- !u!1 &4517458219360042759
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,14 +179,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c46c0207fe255a47ae3d0ea9aeb97ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManager: {fileID: 7119693683260876584, guid: e843797271af92041b7c444fa0c96d1f,
-    type: 3}
   currentItem: {fileID: 0}
   itemCount: 0
   icon: {fileID: 4517458218079657551}
   itemCountText: {fileID: 5696808541491797809}
-  mouseSlot: {fileID: 7254506529215745810, guid: bb1013aae5fa4c5499be9b6c31d977d0,
-    type: 3}
 --- !u!1 &6468450824735007580
 GameObject:
   m_ObjectHideFlags: 0
