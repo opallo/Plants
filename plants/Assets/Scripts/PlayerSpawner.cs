@@ -7,10 +7,11 @@ public class PlayerSpawner : MonoBehaviour {
   public GameObject[] objects;
   bool occupied;
   void Awake() {
-    // objects = new GameObject[objectPrefabs.Length];
-    // for(int i = 0; i < objectPrefabs.Length; i++){
-    //   objects[i] = Instantiate(objectPrefabs[i], Vector3.up*1000f, objectPrefabs[i].transform.rotation) as GameObject;
-    // }
+    objects = new GameObject[objectPrefabs.Length];
+    for(int i = 0; i < objectPrefabs.Length; i++){
+      objects[i] = Instantiate(objectPrefabs[i], Vector3.up*1000f, objectPrefabs[i].transform.rotation) as GameObject;
+      //objects[i].GetComponent<PlaceObjectAnimation>().enabled = false;
+    }
     player = FindObjectOfType<Player>();
   }
   public void SpawnNewObject(GameObject objectToSpawn, Vector3 spawnPosition) {

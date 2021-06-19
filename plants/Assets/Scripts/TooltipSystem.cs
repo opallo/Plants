@@ -9,6 +9,9 @@ public class TooltipSystem : MonoBehaviour {
   public void Awake() {
     current = this;
   }
+  public void Start(){
+    Hide();
+  }
 
   public static void Show(string content, string header = "") {
     current.tooltip.SetText(content, header);

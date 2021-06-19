@@ -29,7 +29,8 @@ public class Spawner : MonoBehaviour {
     GameObject[] potentialObjectsToSpawn = {
       player.playerSpawner.objects[(int)Objects.Stone],
       player.playerSpawner.objects[(int)Objects.Seed],
-      player.playerSpawner.objects[(int)Objects.IzziSeed]
+      player.playerSpawner.objects[(int)Objects.IzziSeed],
+      player.playerSpawner.objects[(int)Objects.Water]
     };
     RandomSpawn(potentialObjectsToSpawn);
     delayedObjectsSpawned = true;

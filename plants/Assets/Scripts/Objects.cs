@@ -5,5 +5,6 @@
   Stone = 3,
   Tree = 4,
   IzziPlanted = 5,
-  IzziSeed = 6
+  IzziSeed = 6,
+  Water = 7
 }
