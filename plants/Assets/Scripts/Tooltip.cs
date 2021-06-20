@@ -46,11 +46,11 @@ public class Tooltip : MonoBehaviour {
       contentField.text = content;
     }
     contentField.text = content;
-    if (Application.isEditor) {
+    //if (Application.isEditor) {
       int headerLength = headerField.text.Length;
       int contentLength = contentField.text.Length;
 
       layoutElement.enabled = (headerLength > characterWrapLimit || contentLength > characterWrapLimit) ? true : false;
-    }
+    //}
   }
 }

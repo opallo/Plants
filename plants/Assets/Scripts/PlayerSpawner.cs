@@ -9,7 +9,7 @@ public class PlayerSpawner : MonoBehaviour {
   void Awake() {
     objects = new GameObject[objectPrefabs.Length];
     for(int i = 0; i < objectPrefabs.Length; i++){
-      objects[i] = Instantiate(objectPrefabs[i], Vector3.up*1000f, objectPrefabs[i].transform.rotation) as GameObject;
+      objects[i] = Instantiate(objectPrefabs[i], new Vector3(1000f, 1000f, 1000f), objectPrefabs[i].transform.rotation) as GameObject;
       //objects[i].GetComponent<PlaceObjectAnimation>().enabled = false;
     }
     player = FindObjectOfType<Player>();

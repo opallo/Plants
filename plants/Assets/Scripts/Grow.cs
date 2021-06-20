@@ -3,14 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Grow : MonoBehaviour {
+  //private static Grow current;
   Player player;
   [SerializeField] GameObject[] phases;
   [SerializeField] float[] phaseDurations;
   float[] modifiablePhaseDurations;
-  int currentPhase;
+  [SerializeField] int currentPhase;
   float currentPhaseTimer;
   bool fullyGrown;
   void OnEnable() {
+    //current = this;
+    phases[0].SetActive(true);
+    phases[1].SetActive(false);
+    phases[2].SetActive(false);
     currentPhase = 0;
     modifiablePhaseDurations = new float[phases.Length - 1];
     for (int i = 0; i < phaseDurations.Length; i++) {
