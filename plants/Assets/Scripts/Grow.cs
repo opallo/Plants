@@ -14,8 +14,11 @@ public class Grow : MonoBehaviour {
   void OnEnable() {
     //current = this;
     phases[0].SetActive(true);
-    phases[1].SetActive(false);
-    phases[2].SetActive(false);
+    for (int i = 1; i < phases.Length; i++){
+      phases[i].SetActive(false);
+    }
+    // phases[1].SetActive(false);
+    // phases[2].SetActive(false);
     currentPhase = 0;
     modifiablePhaseDurations = new float[phases.Length - 1];
     for (int i = 0; i < phaseDurations.Length; i++) {
