@@ -969,8 +969,8 @@ MonoBehaviour:
   dirtBlock: {fileID: 5501689055272540517, guid: 270bb1308739b0c4abd4ff6f3f21b5f5,
     type: 3}
   spawner: {fileID: 8317914767026194338, guid: 516d02379d7de1646ae68ecc53e8f240, type: 3}
-  width: 3
-  height: 3
+  width: 10
+  height: 10
 --- !u!4 &883153122
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b574e58cca6a5084990240648f49c7d5, type: 3}
   m_Name: 
